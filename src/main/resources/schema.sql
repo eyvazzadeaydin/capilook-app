@@ -1,0 +1,1 @@
+CREATE TABLE country (country_id LONG PRIMARY KEY, country_name VARCHAR NOT NULL, capital_city VARCHAR NOT NULL);
