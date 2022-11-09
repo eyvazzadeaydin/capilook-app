@@ -23,9 +23,13 @@ public class CountryController {
         return ResponseEntity.ok(service.getAllCountries());
     }
 
-    @GetMapping("get/{country-name}")
-    public ResponseEntity<String> getCapitalCity(@PathVariable(value = "country-name") String countryName){
+    @GetMapping("/get-capital/{countryName}")
+    public ResponseEntity<String> getCapitalCity(@PathVariable(value = "countryName") String countryName){
         return ResponseEntity.ok(service.getCapitalCity(countryName));
+    }
+    @GetMapping("/get-country/{cityName}")
+    public ResponseEntity<String> getCountryName(@PathVariable String cityName){
+        return ResponseEntity.ok(service.getCountry(cityName));
     }
 
 }
