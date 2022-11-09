@@ -20,8 +20,14 @@ public class CountryServiceImpl implements CountryService{
 
     @Override
     public String getCapitalCity(String countryName) {
-        Country country = repository.findByCountryName(countryName);
+        Country country = repository.findByCountryNameIgnoreCase(countryName);
         return null != country ? country.getCapitalCity() : "Invalid Country Name";
+    }
+
+    @Override
+    public String getCountry(String cityName) {
+        Country country = repository.findByCapitalCityIgnoreCase(cityName);
+        return null != country ? country.getCountryName() : "Invalid Capital City Name";
     }
 
 

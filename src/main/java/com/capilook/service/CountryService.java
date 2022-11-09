@@ -9,4 +9,6 @@ public interface CountryService {
     public List<Country> getAllCountries();
 
     public String getCapitalCity(String countryName);
+
+    public String getCountry(String cityName);
 }
